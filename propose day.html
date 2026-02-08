@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propose Day 💍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:
+    radial-gradient(circle at top,#2b0f1c,#0b0508);
+  font-family:'Inter',sans-serif;
+  overflow:hidden;
+}
+
+.glass{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:24px;
+  padding:40px 30px;
+  max-width:420px;
+  text-align:center;
+  color:#fff;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:48px;
+  margin-bottom:10px;
+}
+
+p{
+  font-size:18px;
+  color:#e5e5e5;
+  line-height:1.6;
+}
+
+button{
+  margin-top:28px;
+  padding:14px 36px;
+  font-size:18px;
+  border:none;
+  border-radius:999px;
+  cursor:pointer;
+  background:#ec4899;
+  color:white;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+
+button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(236,72,153,.4);
+}
+
+#question{display:none}
+#answer{display:none}
+
+@keyframes floatHeart{
+  to{
+    transform:translateY(-120vh) scale(1.2);
+    opacity:0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glass">
+
+  <!-- STEP 1 -->
+  <div id="intro">
+    <h1>Happy Propose Day My Bby😘</h1>
+    <p>
+      zada kuch ni bolunga…<br>
+      bas jo dil ke andar hai,<br>
+      wahi bolna hai 😅
+    </p>
+    <button onclick="nextStep()">Next</button>
+  </div>
+
+  <!-- STEP 2 -->
+  <div id="question">
+    <h1>Hey bby…</h1>
+    <p>
+      mujhe nahi pata future perfect hoga ya nahi,<br>
+      bs ek baat merko pta hai —<br>
+      main usme bss tujhe chaahta hoon 🥹❤️
+    </p>
+
+    <button onclick="sayYes()">Will you be mine forever🥹?</button>
+  </div>
+
+  <!-- STEP 3 -->
+  <div id="answer">
+    <h1>💖</h1>
+    <p>
+      chahe life jaise bhe ho,<br>
+      main bas terko chatha hu 🥹…<br><br>
+      <b>mera dil mai bss tu h 💗.</b><br><br>
+      I love u Soo Much My Bby 🥹😘❤️
+    </p>
+  </div>
+
+</div>
+
+<script>
+function nextStep(){
+  document.getElementById("intro").style.display="none";
+  document.getElementById("question").style.display="block";
+}
+
+function sayYes(){
+  document.getElementById("question").style.display="none";
+  document.getElementById("answer").style.display="block";
+
+  for(let i=0;i<20;i++){
+    const h=document.createElement("div");
+    h.innerText="❤️";
+    h.style.position="fixed";
+    h.style.bottom="-20px";
+    h.style.left=Math.random()*100+"vw";
+    h.style.fontSize="20px";
+    h.style.animation="floatHeart 4s linear";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),4000);
+  }
+}
+</script>
+
+</body>
+</html>
